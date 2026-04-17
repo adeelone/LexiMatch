@@ -1,21 +1,35 @@
-# Java Chess Game
+# LexiMatch
 
-A playable console chess game built in Java with:
+LexiMatch is a playable Wordle-style game with:
 
-- Full move validation
-- Check, checkmate, and stalemate detection
-- Castling, en passant, and promotion support
-- A minimax AI with alpha-beta pruning
+- A Java console version using MVC architecture
+- A browser version with a full web UI
+- Four difficulty modes
+- A 12,000-word guess dictionary and curated answer bank
+- JUnit tests for the Java game logic
 
-## Run
+## Play In The Browser
+
+Run the local server:
 
 ```powershell
-javac -d out src\chess\*.java
-java -cp out chess.ChessConsoleApp
+powershell -ExecutionPolicy Bypass -File .\scripts\serve-web.ps1
 ```
 
-## Controls
+Then open:
 
-- Enter moves like `e2e4`
-- Use promotion suffixes like `e7e8q`
-- Type `quit` to end the session
+```text
+http://localhost:8080/web/
+```
+
+## Run The Java Console Version
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\run.ps1
+```
+
+## Run Tests
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\test.ps1
+```

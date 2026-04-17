@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LexiMatch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="page-shell">
+        <aside class="hero-panel">
+            <p class="eyebrow">Browser Edition</p>
+            <h1>LexiMatch</h1>
+            <p class="hero-copy">
+                A fast five-letter word game with four difficulty levels, live keyboard feedback,
+                and a built-in 12,000-word dictionary.
+            </p>
+
+            <section class="stats-card">
+                <div>
+                    <span class="stats-label">Wins</span>
+                    <strong id="winsCount">0</strong>
+                </div>
+                <div>
+                    <span class="stats-label">Played</span>
+                    <strong id="playedCount">0</strong>
+                </div>
+                <div>
+                    <span class="stats-label">Win Rate</span>
+                    <strong id="winRate">0%</strong>
+                </div>
+            </section>
+
+            <section class="info-card">
+                <h2>Modes</h2>
+                <ul>
+                    <li><strong>Beginner</strong>: 8 attempts and a first-letter hint after 3 valid guesses</li>
+                    <li><strong>Standard</strong>: classic 6-attempt mode</li>
+                    <li><strong>Advanced</strong>: hard mode clue reuse rules</li>
+                    <li><strong>Expert</strong>: hard mode with only 5 attempts</li>
+                </ul>
+            </section>
+        </aside>
+
+        <main class="game-panel">
+            <header class="topbar">
+                <div class="controls">
+                    <label for="difficultySelect">Difficulty</label>
+                    <select id="difficultySelect">
+                        <option value="BEGINNER">Beginner</option>
+                        <option value="STANDARD" selected>Standard</option>
+                        <option value="ADVANCED">Advanced</option>
+                        <option value="EXPERT">Expert</option>
+                    </select>
+                </div>
+
+                <button id="newGameButton" class="primary-button" type="button">New Game</button>
+            </header>
+
+            <section class="status-strip">
+                <div>
+                    <span class="status-label">Attempts</span>
+                    <strong id="attemptsText">0 / 6</strong>
+                </div>
+                <div>
+                    <span class="status-label">Dictionary</span>
+                    <strong id="dictionaryText">Loading...</strong>
+                </div>
+                <div>
+                    <span class="status-label">State</span>
+                    <strong id="stateText">Preparing game...</strong>
+                </div>
+            </section>
+
+            <section class="hint-banner" id="hintBanner" hidden></section>
+            <section class="message-banner" id="messageBanner">Loading dictionary files...</section>
+
+            <section class="board" id="board" aria-label="Game board"></section>
+
+            <section class="keyboard" id="keyboard" aria-label="On-screen keyboard"></section>
+        </main>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
