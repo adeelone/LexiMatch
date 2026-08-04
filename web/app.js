@@ -46,8 +46,8 @@ async function bootstrap() {
 
     try {
         const [allowedWords, answerWords] = await Promise.all([
-            loadWordList("../src/main/resources/allowed-guesses.txt"),
-            loadWordList("../src/main/resources/answer-bank.txt")
+            loadWordList("./allowed-guesses.txt"),
+            loadWordList("./answer-bank.txt")
         ]);
 
         state.allowedWords = new Set(allowedWords);
